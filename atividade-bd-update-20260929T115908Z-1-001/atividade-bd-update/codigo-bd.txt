@@ -1,0 +1,64 @@
+CREATE DATABASE db_loja;
+USE db_loja;
+	CREATE TABLE tbl_vendedores(
+	cod_vendedor INT,
+	nome VARCHAR (30),
+	carro_vendedor VARCHAR (30),
+	cidade VARCHAR (40),
+	estado VARCHAR(40),
+	comissao FLOAT,
+	PRIMARY KEY (cod_vendedor)
+	);
+
+	INSERT INTO tbl_vendedores ( cod_vendedor,nome,carro_vendedor,cidade,estado,comissao) VALUES
+		(1,'Juca da Silva','ABC1234','Pelotas','RS',3.50),
+		(3,'antonio de vieira','JKG5678','Dois vizinhos ','PR',5.00),
+		(44,'Julieta da Silva','null','verê','PR',2.50),
+		(6,'maria francisca','LKO8954','Dois vizinhos','PR',2.00),
+		(45,'marieta da silva','null','verê','PR',2.80),
+		(9,'Juca Silva','null','PELOTAS','PR',5.40),
+		(18,'maria guedes','MMS1609','brasilia','DF',3.40),
+		(20,'jian de barros','ASD123','curitiba','PR',2.80),
+		(28,'fagundes de azevedo azevedo','null','verê','PR',3.50),
+		(40,'ari ribas','GTR4596','Erechim','RS',3.50);
+        
+        
+       UPDATE tbl_vendedores
+	  SET carro_vendedor = 'FGT667'
+      WHERE cod_vendedor = 44;
+      
+        UPDATE tbl_vendedores
+	  SET carro_vendedor = 'SKS987'
+      WHERE cod_vendedor = 45;
+      
+        UPDATE tbl_vendedores
+	  SET carro_vendedor = 'LKP341'
+      WHERE cod_vendedor = 9;
+      
+        UPDATE tbl_vendedores
+	  SET carro_vendedor = 'MEM5112'
+      WHERE cod_vendedor = 28;
+      
+        CREATE TABLE tbl_carros (
+        cod_carro INT,
+        placa VARCHAR(30),
+        marca VARCHAR (30),
+        modelo VARCHAR (30),
+        ano INT,
+        combustivel VARCHAR (1),
+        PRIMARY KEY (cod_carro)
+        );
+     
+        
+        INSERT INTO tbl_carros( cod_carro,placa,marca,modelo,ano,combustivel) VALUES 
+        (1,'ABC1234','ford','Corcel' ,1992,'G'),
+		(2,'JKG5678','ford','focus' ,2001,'A'),
+		(3,'LKO8954','renault','clio' ,2007,'F'),
+		(4,'MMS1609','VolksWagem','fusca' ,1973,'G'),
+		(5,'ASD123','Honda','civic' ,2010,'F'),
+		(6,'GTR4596','GM','Corsa ',2004,'A');
+       
+        
+        SELECT * FROM tbl_vendedores;
+          SELECT * FROM tbl_carros;
+        
